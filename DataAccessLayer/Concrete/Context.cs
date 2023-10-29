@@ -8,7 +8,7 @@ namespace DataAccessLayer.Concrete
 	{
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("User ID=root;Password=root;Host=localhost;Port=5432;Database=TraversalDB;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\Lysoth;Database=TraversalDB;");
         }
 
         DbSet<About> Abouts { get; set; }
@@ -21,6 +21,7 @@ namespace DataAccessLayer.Concrete
         DbSet<Newsletter> Newsletters { get; set; }
         DbSet<SubAbout> SubAbouts { get; set; }
         DbSet<Testimonial> Testimonials { get; set; }
+
 
     }
 }
